@@ -1,0 +1,22 @@
+<html>
+ <head>
+  <title>Show and hide div with JavaScript</title>
+     <style>
+         .hidden{
+            display : none;
+            }
+     </style>
+ </head>
+ <body>
+  <div id="newpost"  class="hidden">
+    <p>{{ res }} </p>
+  </div>
+  <button id="button" onclick="showhide()">Узнать кто ты</button>
+</body>
+ <script>
+     function showhide() {
+          var div = document.getElementById("newpost");
+          div.classList.toggle('hidden'); 
+        }
+ </script>
+</html>

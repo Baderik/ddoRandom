@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from randomaizer.models import Game, GamePlayer
+admin.site.register(Game)
+admin.site.register(GamePlayer)
