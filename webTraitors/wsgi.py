@@ -1,5 +1,5 @@
 """
-WSGI config for ddoRandom project.
+WSGI config for webTraitors project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -10,7 +10,9 @@ https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from dotenv import load_dotenv
+load_dotenv()
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ddoRandom.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'webTraitors.settings')
 
 application = get_wsgi_application()

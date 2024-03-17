@@ -5,7 +5,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('game/', include("randomaizer.urls")),
+    path('game/', include("game.urls")),
 ]
 
 # if settings.DEBUG:

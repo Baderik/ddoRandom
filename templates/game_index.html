@@ -1,0 +1,65 @@
+{% load static %}
+<html lang="ru" >
+<head>
+    <title>Роль в игре #{{ game_id }}</title>
+    <style>
+        body {
+            background: #995253;
+            font-family: Tahoma, serif;
+            text-align: center;
+            color: white;
+        }
+        .hidden{
+            display : none;
+        }
+        img {
+            border: 0.5rem solid white;
+            border-radius: 5px;
+            max-width: 50%;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 0.25rem 2.5rem;
+            background: transparent;
+            border: 0.2rem solid white;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        main {
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            width: 100%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <main>
+    {% if success %}
+        <div id="role"  class="hidden">
+            <h2>Вы - {{ role }}</h2>
+            <img src="{% static img_url %}" alt="Role">
+            <div>
+                <h3>{{ text }}</h3>
+            </div>
+        </div>
+        <div id="button-out">
+            <button id="button" onclick="showHide()">Узнать кто ты</button>
+        </div>
+    {% else %}
+        <h1>Ошибка</h1>
+        <p>{{ message }}</p>
+    {% endif %}
+    </main>
+
+</body>
+<script>
+    function showHide() {
+        let div = document.getElementById("role");
+        div.classList.toggle('hidden');
+    }
+</script>
+</html>
